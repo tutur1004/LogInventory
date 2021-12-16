@@ -1,0 +1,12 @@
+name: LogInventory
+main: fr.milekat.elastimcloginventory.Main
+version: 1.0
+api-version: 1.18
+description: 'API to add custom logs into an ElasticSearch database'
+authors:
+    - MileKat (tutur1004#8766)
+depend:
+    - ElasticMcLogAPI
+libraries:
+    - com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0
+    - com.google.jimfs:jimfs:1.2

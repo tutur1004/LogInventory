@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url = 'https://jitpack.io' }
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    mavenCentral()
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.18-R0.1-SNAPSHOT'
+    compileOnly group: 'com.github.tutur1004', name: 'ElasticMcLogAPI', version: '3ed8416556'
+    compileOnly group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
+    compileOnly 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0'
+    compileOnly 'com.google.jimfs:jimfs:1.2'
+}
