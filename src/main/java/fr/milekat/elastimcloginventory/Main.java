@@ -1,9 +1,11 @@
 package fr.milekat.elastimcloginventory;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import fr.milekat.elastimcloginventory.listeners.ConnectionInventoryLog;
 import fr.milekat.elastimcloginventory.utils.InventorySaver;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.IOException;
 
 public class Main extends JavaPlugin {
     @Override
@@ -14,7 +16,8 @@ public class Main extends JavaPlugin {
             try {
                 InventorySaver.saveInventory(player.getUniqueId(),
                         player.getName(), player.getInventory());
-            } catch (JsonProcessingException e) {
+                InventorySaver.loadInventory();
+            } catch (InvalidConfigurationException | IOException e) {
                 e.printStackTrace();
             }
         });
